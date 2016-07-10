@@ -11,4 +11,7 @@ This is supportted by Python 2.7 I can not guarrentee the stablist. So far, I on
 The new function is that there are two more mode.  Mode 1 you can download any current page like the url format as "http://yudengyue.lofter.com/?page=2&t=1466499686554". What's more, Mode 2, you can download all the images of one's blog once with type the main URL such as "http://yudengyue.lofter.com/", which is more convenient for restore all the image.
 And you can just pick any postpages to download current page's images directly. It can crawle most of different css styles of lofter.
 
+Latest "Lofter-image-crawler.exe.zip" file is a executable file on Windows OS, I only test on the Win8. You can just input the url of any lofter blogs directly with this .exe program.
+
+Soon, I will make a dmg file on MAC OS for those who do not install any required environments.
 
