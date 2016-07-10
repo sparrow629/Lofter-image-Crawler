@@ -10,10 +10,10 @@ The new function is that there are two more mode.  Mode 1 you can download any c
 And you can just pick any postpages to download current page's images directly. It can crawle most of different css styles of lofter.
 
 Downloading file:
-For Mac OS:
+1.For Mac OS:
 Download the Lofter_image_crawler.py to your local computer with python 2.7. Open your terminal cd into where you put this .py file. Then type "python Lofter_image_crawler.py" you can run it simply.
 
-For Windows OS:
+2.For Windows OS:
 Latest "Lofter-image-crawler.exe.zip" file is a executable file on Windows OS, I only test on the Win8. You can just input the url of any lofter blogs directly with this .exe program.
 Also you can python .py file better with python 2.7.
 
