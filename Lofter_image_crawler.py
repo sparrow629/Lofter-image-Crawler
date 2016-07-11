@@ -64,16 +64,16 @@ def getPostname(posturl):
 		return postnamelist[0]
 
 def home(url):
-	reg = r'http://.*?\.lofter\.com/\?*.*'
+	reg = r'http://.*?\.lofter\.com/post/.*'
 	h = re.compile(reg)
 	jhome = re.findall(h,url)
 	print jhome
 	if jhome :
-		print 'true'
-		return True
-	else:
-		print 'false'
+		print 'Post'
 		return False
+	else:
+		print 'Homepage'
+		return True
 
 def getnexturl(url):
 	html = getHtml(url)
@@ -92,48 +92,60 @@ def getnexturl(url):
 		return False
 
 if __name__ == '__main__':
-	URL = raw_input('Input url: ')
-	html = getHtml(URL)
 
-	global Number
-	Number = 0
-
-	if home(URL):
+	select = 'N'
+	while (select == 'N'):
 		print '''
+		---------------------------------
+		Welcome to lofter image download!
+		---------------------------------
+		Author:  Sparrow
+  		Purpose: downloading images from xxx.lofter.com once.
+  		Created: 2016-7.4
+		'''
+		URL = raw_input('Input url: ')
+		html = getHtml(URL)
+
+		global Number
+		Number = 0
+
+		if home(URL):
+			print '''
 			which mode you want:
 			1.Downloading current page's images.
 			2.Downloading all the images from current page to the end of this blog once.
-			Notice: If you want to download the entire blog's images, you should copy the
-			the format like "http://xxxxxx.lofter.com/"
-		'''
-		Mode = int(raw_input())
-		if Mode == 1:
-			print getPost(html)
-			print len(getPost(html))
-			Posturl = getPost(html)
-			for post_url in Posturl:
-				imghtml = getHtml(post_url)
-				getImg(imghtml,URL,post_url)
-			print "Congratulation! Totally finished downloading %s images" % Number
-		if Mode == 2:
-			pagelists = [URL]
-			i = 1
-			print getnexturl(URL)
-			for nexturl in pagelists:
-				nexthtml = getHtml(nexturl)
-				print "Downloading Page %s" % i
-				i +=1
+			Notice: If you want to download the entire blog's images, you should copy the format like "http://xxxxxx.lofter.com/"
+			'''
+			Mode = int(raw_input())
+			if Mode == 1:
 				print getPost(html)
 				print len(getPost(html))
 				Posturl = getPost(html)
 				for post_url in Posturl:
 					imghtml = getHtml(post_url)
 					getImg(imghtml,URL,post_url)
+				print "Congratulation! Totally finished downloading %s images" % Number
+			if Mode == 2:
+				pagelists = [URL]
+				i = 1
+				print getnexturl(URL)
+				for nexturl in pagelists:
+					nexthtml = getHtml(nexturl)
+					print "Downloading Page %s" % i
+					i +=1
+					print getPost(html)
+					print len(getPost(html))
+					Posturl = getPost(html)
+					for post_url in Posturl:
+						imghtml = getHtml(post_url)
+						getImg(imghtml,URL,post_url)
+				print "Congratulation! Totally finished downloading %s images" % Number
+
+		else:
+			post_url = URL
+			getImg(html,URL,post_url)
 			print "Congratulation! Totally finished downloading %s images" % Number
 
-	else:
-		post_url = URL
-		getImg(html,URL,post_url)
-		print "Congratulation! Totally finished downloading %s images" % Number
+		select = raw_input("Do you want to quit? [Y/N]")
 
 
