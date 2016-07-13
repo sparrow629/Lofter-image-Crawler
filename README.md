@@ -19,7 +19,7 @@ Latest "Lofter-image-crawler.exe.zip" file is a executable file on Windows OS, I
 Also you can python .py file better with python 2.7.
 
 ##If there is any problem, leave me a message.
-bill0zxb@163.com
+sparrow629@163.com
 
 ##Operation method
 关于下载：
@@ -61,5 +61,5 @@ http://xxxxx.lofter.com/
 
 感谢你的使用！
 
-作者邮件：bill0zxb@163.com
+作者邮件：sparrow629@163.com
 
