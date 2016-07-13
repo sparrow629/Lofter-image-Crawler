@@ -4,7 +4,7 @@
   Author:  Sparrow
   Purpose: downloading image from www.lofter.com in every blog's page once.
   Created: 2016-7.4
-  E-mail:  bill0zxb@163.com
+  E-mail:  sparrow629@163.com
 """
 import re 
 import urllib
